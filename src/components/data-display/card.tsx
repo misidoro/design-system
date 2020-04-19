@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardStyled, CardTitle, CardCategory, CardRow, CardCreatedBy } from '../../atoms/data-display';
+import { CardStyled, CardTitle, CardCategory, CardRow, CardCreatedBy } from '../../atoms/data-display/card';
 
 export interface CardProps {
 	title: string;
