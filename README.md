@@ -1,44 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Design system
 
-## Available Scripts
+## Run storybook
+```
+npm run storybook
+```
 
-In the project directory, you can run:
+## Concept
+The system is organised in tokens, atoms and components. 
+A design system needs to be highly reusable as well as 
+This is just the initial approach. A system is expected to change and adapt over time.
 
-### `npm start`
+### Tokens
+Tokens are the base all our visual design(color, spacing, typography)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Atoms
+Atoms are styled elements that are highly reusable.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Components 
+Components provide functionality and enforce best practices for UX and accessibility.
 
-### `npm test`
+## Tech
+This project uses create-react-app [Create React App](https://github.com/facebook/create-react-app) with typescript and storybook. For styling uses styled-components with theme provider to allow some of the base properties to be changed.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Future
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Documentation 
+Plays an important role in a design system, and has a big impact on adoption. 
+Storybook plugin `@storybook/addon-docs` was added to provide a way to see the code. When running storybook, there are 2 tabs: `Canvas` and `Docs`. The documentation is available under the Docs tab.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Accessibility
+Support for accessibility is minimal for the initial delivery. Will be improved and provided where needed. 
 
-### `npm run eject`
+There are great plugins for storybook to help shape accessibility to the recommended level.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Support for CSS library
+In order to be able to scale design system's usage to all products and marketing sites, the system should provide a css library using methodologies like OOCSS, SMACSS or BEM.
