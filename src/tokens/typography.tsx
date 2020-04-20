@@ -3,12 +3,17 @@ import styled, { css } from 'styled-components';
 
 export interface TypographyProps {
 	children: React.ReactNode;
+	color?: string;
 }
 
-const headingCss = css`
+const headingCss =
+	css <
+	TypographyProps >
+	`
 	font-family: ${({ theme }) => theme.fontFamily};
 	font-style: normal;
 	font-weight: 600;
+	color: ${({ color, theme }) => color || theme.fontColor};
 `;
 
 const H1Styled = styled.h1`
@@ -29,10 +34,20 @@ const H3Styled = styled.h3`
 	line-height: 26px;
 `;
 
-const bodyCss = css`
+const H4Styled = styled.h4`
+	${headingCss};
+	font-size: 16px;
+	line-height: 24px;
+`;
+
+const bodyCss =
+	css <
+	TypographyProps >
+	`
 	font-family: ${({ theme }) => theme.fontFamily};
 	font-style: normal;
 	font-weight: 500;
+	color: ${({ color, theme }) => color || theme.fontColor};
 `;
 
 const Body1Styled = styled.p`
@@ -44,4 +59,5 @@ const Body1Styled = styled.p`
 export const H1 = (props: TypographyProps) => <H1Styled>{props.children}</H1Styled>;
 export const H2 = (props: TypographyProps) => <H2Styled>{props.children}</H2Styled>;
 export const H3 = (props: TypographyProps) => <H3Styled>{props.children}</H3Styled>;
+export const H4 = (props: TypographyProps) => <H4Styled>{props.children}</H4Styled>;
 export const Body1 = (props: TypographyProps) => <Body1Styled>{props.children}</Body1Styled>;

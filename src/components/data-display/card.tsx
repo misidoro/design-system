@@ -1,5 +1,6 @@
 import React from 'react';
-import { CardStyled, CardTitle, CardCategory, CardRow, CardCreatedBy } from '../../atoms/data-display/card';
+import { CardStyled, CardCategory, CardRow, CardCreatedBy } from '../../atoms/data-display/card';
+import { H4 } from '../../tokens/typography';
 
 export interface CardProps {
 	title: string;
@@ -10,7 +11,7 @@ export interface CardProps {
 
 export const Card = ({ title, category, createdBy, categoryColor }: CardProps) => (
 	<CardStyled>
-		<CardTitle>{title}</CardTitle>
+		<H4>{title}</H4>
 		<CardRow>
 			<CardCategory color={categoryColor}>{category}</CardCategory>
 			<CardCreatedBy>{createdBy}</CardCreatedBy>

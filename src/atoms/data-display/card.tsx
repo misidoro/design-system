@@ -36,14 +36,6 @@ export const CardRow = styled.div`
 	}
 `;
 
-export const CardTitle = styled.h4`
-	font-family: ${({ theme }) => theme.fontFamily};
-	font-style: normal;
-	font-weight: 600;
-	font-size: 1rem;
-	line-height: 1rem;
-`;
-
 export interface CardCategoryStyledProps {
 	color?: string;
 }
@@ -61,7 +53,7 @@ export const CardCategory =
 	padding: 0.25rem;
 	border-radius: 0.25rem;
 	text-transform: capitalize;
-	background: ${({ color, theme }) => (color ? color : theme.secondary)};
+	background: ${({ color, theme }) => color || theme.secondary};
 `;
 
 export const CardCreatedBy = styled.span`

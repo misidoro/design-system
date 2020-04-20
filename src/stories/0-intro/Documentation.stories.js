@@ -1,6 +1,7 @@
 import React from 'react';
 import { linkTo } from '@storybook/addon-links';
 import { H1, H2, Body1 } from '../../tokens/typography';
+import { Button } from '../../components/inputs/button';
 
 const content = {
 	title: 'Concept',
@@ -9,12 +10,12 @@ const content = {
 		{name : 'typography', location: 'Tokens/typography'},
 	],
 	atoms: [
-		{name : 'button', location: 'Atoms/button'},
-		{name : 'card', location: 'Atoms/card'},
+		{name : 'button', location: 'Atoms/ButtonStyled'},
+		{name : 'card', location: 'Atoms/CardStyled'},
 	],
 	components: [
-		{name : 'button', location: 'Atoms/button'},
-		{name : 'card', location: 'Atoms/card'},
+		{name : 'button', location: 'Components/button'},
+		{name : 'card', location: 'Components/card'},
 	]
 };
 
@@ -39,7 +40,7 @@ export const Welcome = () => {
 			<Body1>Tokens are the base all our visual design(color, spacing, typography)</Body1>
 			<ul>
 				{content.tokens.map((componentDef, i) => (
-					<li key={i}><Body1 onClick={linkTo(componentDef.location)}>{componentDef.name}</Body1></li>
+					<li key={i}><Button onClick={linkTo(componentDef.location)}>{componentDef.name}</Button></li>
 				))}
 			</ul>
 
@@ -47,7 +48,7 @@ export const Welcome = () => {
 			<Body1>Atoms are styled elements that are highly reusable.</Body1>
 			<ul>
 				{content.atoms.map((componentDef, i) => (
-					<li key={i}><Body1 onClick={linkTo(componentDef.location)}>{componentDef.name}</Body1></li>
+					<li key={i}><Button onClick={linkTo(componentDef.location)}>{componentDef.name}</Button></li>
 				))}
 			</ul>
 
@@ -56,7 +57,7 @@ export const Welcome = () => {
 
 			<ul>
 				{content.components.map((componentDef, i) => (
-					<li key={i}><Body1 onClick={linkTo(componentDef.location)}>{componentDef.name}</Body1></li>
+					<li key={i}><Button onClick={linkTo(componentDef.location)}>{componentDef.name}</Button></li>
 				))}
 			</ul>
 		</>
