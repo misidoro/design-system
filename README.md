@@ -2,6 +2,10 @@
 
 ## Run storybook
 ```
+// install dependencies
+npm i 
+
+// run storybook locally
 npm run storybook
 ```
 
